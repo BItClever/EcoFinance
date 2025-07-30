@@ -57,6 +57,9 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - MongoDbSettings__ConnectionString=mongodb://mongo:27017
       - MongoDbSettings__DatabaseName=EcoFinanceDb
+      - Jwt__Key=YOUR_SUPER_SECRET_KEY_HERE_MIN_32_CHARS
+      - Jwt__Issuer=EcoFinance
+      - Jwt__Audience=EcoFinance
     depends_on:
       - mongo
 
