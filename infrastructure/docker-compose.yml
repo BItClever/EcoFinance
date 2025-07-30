@@ -60,6 +60,22 @@ services:
     depends_on:
       - mongo
 
+  userservice:
+    build:
+      context: ../services/UserService
+      dockerfile: Dockerfile
+    container_name: eco_userservice
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=server=eco_mysql;port=3306;database=ecofinance;user=eco_user;password=eco_pass
+      - Jwt__Key=YOUR_SUPER_SECRET_KEY_HERE_MIN_32_CHARS
+      - Jwt__Issuer=EcoFinance
+      - Jwt__Audience=EcoFinance
+    depends_on:
+      - mysql
+
 volumes:
   mongo_data:
   mysql_data:
