@@ -60,6 +60,11 @@ services:
       - Jwt__Key=YOUR_SUPER_SECRET_KEY_HERE_MIN_32_CHARS
       - Jwt__Issuer=EcoFinance
       - Jwt__Audience=EcoFinance
+      - RabbitMq__Host=eco_rabbitmq
+      - RabbitMq__Port=5672
+      - RabbitMq__User=guest
+      - RabbitMq__Password=guest
+      - RabbitMq__Queue=expenses
     depends_on:
       - mongo
 
@@ -78,6 +83,26 @@ services:
       - Jwt__Audience=EcoFinance
     depends_on:
       - mysql
+
+  ecocalcservice:
+    build:
+      context: ../services/EcoCalcService
+      dockerfile: Dockerfile
+    container_name: eco_ecocalcservice
+    ports:
+      - "5002:8082"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - MongoDbSettings__ConnectionString=mongodb://mongo:27017
+      - MongoDbSettings__DatabaseName=EcoFinanceDb
+      - RabbitMq__Host=eco_rabbitmq
+      - RabbitMq__Port=5672
+      - RabbitMq__User=guest
+      - RabbitMq__Password=guest
+      - RabbitMq__Queue=expenses
+    depends_on:
+      - mongo
+      - rabbitmq
 
 volumes:
   mongo_data:

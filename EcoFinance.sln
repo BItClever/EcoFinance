@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpensesService", "services
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "services\UserService\UserService.csproj", "{35B35688-57B8-4008-8E0F-74DBCE7C66DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoCalcService", "services\EcoCalcService\EcoCalcService.csproj", "{6616CEBD-110D-4BC6-8A32-543BF750E3CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{35B35688-57B8-4008-8E0F-74DBCE7C66DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35B35688-57B8-4008-8E0F-74DBCE7C66DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35B35688-57B8-4008-8E0F-74DBCE7C66DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6616CEBD-110D-4BC6-8A32-543BF750E3CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6616CEBD-110D-4BC6-8A32-543BF750E3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6616CEBD-110D-4BC6-8A32-543BF750E3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6616CEBD-110D-4BC6-8A32-543BF750E3CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
